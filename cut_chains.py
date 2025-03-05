@@ -21,7 +21,7 @@ def cut_chain(msa_input, chain_id, cuts):
             sequence = seq['protein']['sequence']
             cuts = [0] + cuts + [len(sequence)]
             for i in range(len(cuts) - 1):
-                new_chain_id = f"{chain_id}_{chr(65 + i)}"
+                new_chain_id = f"{chain_id}{chr(65 + i)}"
                 new_sequence = sequence[cuts[i]:cuts[i + 1]]
                 new_sequences.append({"protein": {"id": new_chain_id, "sequence": new_sequence}})
         else:
