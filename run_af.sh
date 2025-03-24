@@ -31,16 +31,23 @@ if [ "$1" == "-j" ]; then
   OUTPUT_DIR=$(dirname "$(dirname "$PAIR")")
   echo "Run AF3 on file: $PAIR"
   echo "Output directory: $OUTPUT_DIR"
-    python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer --db_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/databases --model_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/models --hmmbuild_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmbuild --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch --norun_data_pipeline --output_dir $OUTPUT_DIR --json_path $PAIR
   
+  # Ensure the output directory exists
+  mkdir -p "$OUTPUT_DIR"
   
+  python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer --db_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/databases --model_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/models --hmmbuild_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmbuild --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch --norun_data_pipeline --output_dir $OUTPUT_DIR --json_path $PAIR
   
 else
   COMPLEX="$1"
   INPUT_DIR="$COMPLEX/msa_pairs"
+  OUTPUT_DIR="$COMPLEX/af_pairs"
   echo "Run AF3 on $COMPLEX"
   echo "input dir $INPUT_DIR"
-  python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer --db_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/databases --model_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/models --hmmbuild_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmbuild --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch --norun_data_pipeline --output_dir $COMPLEX --input_dir $INPUT_DIR  
+  
+  # Ensure the output directory exists
+  mkdir -p "$OUTPUT_DIR"
+  
+  python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer --db_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/databases --model_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/models --hmmbuild_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmbuild --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch --norun_data_pipeline --output_dir $OUTPUT_DIR --input_dir $INPUT_DIR
   
 fi
 
