@@ -29,3 +29,5 @@ echo "Run MSA on $1"
 cd /cs/labs/dina/tsori/af3_example/
 
 python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer --db_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/databases --model_dir /cs/usr/bshor/sci/installations/af3_variations/deepmind/models --hmmbuild_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmbuild --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch --norun_inference  --output_dir $OUTPUT_DIR --json_path $JSON_PATH
+
+python msa_to_pairwise.py $1
