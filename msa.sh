@@ -7,6 +7,8 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-user=tsori.kislev@gmail.com
 
+#SBATCH --exclude=sm-01
+
 #SBATCH --output=slurms_outs/msa/%j.out
 
 
