@@ -46,8 +46,13 @@ def create_pairwise_msa(input_file, output_dir):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("script <complex> ")
+        print("Usage: script <INPUT_JSON_PATH>")
         sys.exit(1)
-    complex_name = sys.argv[1]
-    input_file =  os.path.join(complex_name,f'{complex_name}_data.json')
-    create_pairwise_msa(input_file, complex_name)
+    
+    input_file = sys.argv[1]
+    
+    # Determine the output directory based on the input file's directory
+    input_dir = os.path.dirname(input_file)
+    output_dir = os.path.join(input_dir, 'output_pairs')
+    
+    create_pairwise_msa(input_file, output_dir)
