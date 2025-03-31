@@ -38,11 +38,8 @@ if [ ! -f "$JSON_PATH" ]; then
   exit 1
 fi
 
-# Validate output directory
-if [ ! -d "$OUTPUT_DIR" ]; then
-  echo "Error: Output directory '$OUTPUT_DIR' does not exist."
-  exit 1
-fi
+# Ensure the output directory exists
+mkdir -p "$OUTPUT_DIR"
 
 echo "Run MSA with input JSON: $JSON_PATH"
 
