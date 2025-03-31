@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e0e5b38-254a-444c-bc04-54a37f16c13b" name="Changes" comment="readme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3e0e5b38-254a-444c-bc04-54a37f16c13b" name="Changes" comment="readme" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +29,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/tsori-ki/AF_pairs.git&quot;,
-    &quot;accountId&quot;: &quot;f72ab3c0-f3db-4b87-b929-6930631decd7&quot;
+    &quot;accountId&quot;: &quot;38277771-ac33-4065-89ba-b43019ad94e9&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -60,6 +58,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,6 +84,7 @@
       <workItem from="1741350854314" duration="60000" />
       <workItem from="1743424431989" duration="11000" />
       <workItem from="1743424463222" duration="60000" />
+      <workItem from="1743430550588" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="cuts">
       <option name="closed" value="true" />

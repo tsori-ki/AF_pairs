@@ -12,7 +12,7 @@ import sys
 # Output:
 #   A JSON file containing the protein sequences formatted for MSA.
 
-def convert_txt_to_msa_json(input_file, output_file):
+def convert_txt_to_msa_json(input_file, output_file, mapping_json):
     """
     Converts a text file containing protein sequences into a JSON file formatted for MSA.
 
@@ -56,9 +56,10 @@ def convert_txt_to_msa_json(input_file, output_file):
 
     if current_protein:
         msa_input["sequences"].append(current_protein)
-
+    # Rename protein IDs and save mapping
+    msa_data = rename_protein_ids(msa_input, mapping_json) #todo: add this to txt_to_msa2 and subunit. also add mapping json as argument
     with open(output_file, 'w') as f:
-        json.dump(msa_input, f, indent=4, separators=(',', ': '))
+        json.dump(msa_data, f, indent=4, separators=(',', ': '))
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
