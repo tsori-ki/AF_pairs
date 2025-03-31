@@ -7,7 +7,7 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-user=tsori.kislev@gmail.com
 
-#SBATCH --exclude=sm-01
+#SBATCH --exclude=sm-01,sm-16
 
 #SBATCH --output=slurms_outs/msa/%j.out
 
@@ -58,4 +58,5 @@ python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/a
   --output_dir "$OUTPUT_DIR" \
   --json_path "$JSON_PATH"
 
-python msa_to_pairwise.py "$JSON_PATH"
+OUTPUT_JSON_PATH="$OUTPUT_DIR/$(basename "$JSON_PATH" .json)_data.json"
+python msa_to_pairwise.py "$JSON_PATH" "$OUTPUT_JSON_PATH"
