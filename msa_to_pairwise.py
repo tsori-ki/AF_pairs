@@ -19,9 +19,6 @@ def create_pairwise_msa(input_file, output_dir):
 
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
-    #create output_pairs directory
-    output_dir = os.path.join(output_dir, 'msa_pairs')
-    os.makedirs(output_dir, exist_ok=True)
     # Save each pair as a separate JSON file
     for seq1, seq2 in pairs:
         seq_a = deepcopy(seq1)
@@ -53,6 +50,6 @@ if __name__ == '__main__':
     
     # Determine the output directory based on the input file's directory
     input_dir = os.path.dirname(input_file)
-    output_dir = os.path.join(input_dir, 'output_pairs')
+    output_dir = os.path.join(input_dir, 'msa_pairs')
     
     create_pairwise_msa(input_file, output_dir)
