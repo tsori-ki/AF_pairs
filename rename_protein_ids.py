@@ -11,16 +11,14 @@ def generate_labels():
     for pair in itertools.product(alphabet, repeat=2):
         yield ''.join(pair)
 
-def rename_protein_ids(msa_data, mapping_file):
+def rename_protein_ids(msa_data, output_file, mapping_file_path):
     """
-    Renames protein IDs in the given MSA JSON structure.
+    Renames protein IDs in the given MSA JSON structure and saves the mapping in a json file.
 
     Args:
         msa_data (dict): The MSA JSON data.
-        mapping_file (str): Path to save the mapping JSON file.
+        mapping_file_path (str): Path to save the mapping JSON file.
 
-    Returns:
-        dict: The modified MSA JSON data with updated protein IDs.
     """
     protein_map = {}
     label_generator = generate_labels()
@@ -32,7 +30,8 @@ def rename_protein_ids(msa_data, mapping_file):
         seq["protein"]["id"] = protein_map[original_id]
 
     # Save mapping
-    with open(mapping_file, 'w') as file:
+    with open(mapping_file_path, 'w') as file:
         json.dump(protein_map, file, indent=4)
 
-    return msa_data
+    with open(output_file, 'w') as f:
+        json.dump(msa_data, f, indent=4, separators=(',', ': '))

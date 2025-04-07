@@ -1,15 +1,14 @@
 import json
 import os
 import sys
+from rename_protein_ids import rename_protein_ids
 
-
-def convert_fasta_to_msa_json(input_file, output_file):
+def convert_fasta_to_msa_json(input_file):
     """
     Converts a FASTA file into a JSON formatted for MSA.
 
     Args:
         input_file (str): Path to the input FASTA file.
-        output_file (str): Path to the output JSON file.
     """
     with open(input_file, 'r') as f:
         lines = f.readlines()
@@ -40,8 +39,9 @@ def convert_fasta_to_msa_json(input_file, output_file):
     if current_protein:
         msa_input["sequences"].append(current_protein)
 
-    with open(output_file, 'w') as f:
-        json.dump(msa_input, f, indent=4, separators=(',', ': '))
+    # with open(output_file, 'w') as f:
+    #     json.dump(msa_input, f, indent=4, separators=(',', ': '))
+    return msa_input
 
 
 if __name__ == '__main__':
@@ -50,4 +50,11 @@ if __name__ == '__main__':
         sys.exit(1)
 
     input_file, output_file = sys.argv[1], sys.argv[2]
-    convert_fasta_to_msa_json(input_file, output_file)
+
+    # Extract directory from output_file path
+    output_dir = os.path.dirname(output_file)
+    # Define the mapping file path in the same directory as output_file
+    mapping_file_path = os.path.join(output_dir, "mapping_file.json")
+
+    msa_dict = convert_fasta_to_msa_json(input_file)
+    rename_protein_ids(msa_dict, output_file, mapping_file_path)
