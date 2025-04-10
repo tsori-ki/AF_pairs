@@ -1,6 +1,6 @@
 import requests
 import json
-
+#
 sequence = "MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP..."
 prediction_type = "long"  # or "short", "structured"
 
