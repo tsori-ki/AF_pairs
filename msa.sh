@@ -2,7 +2,7 @@
 
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=40G
-#SBATCH --time=1-00:00:00
+#SBATCH --time=2-00:00:00
 
 #SBATCH --mail-type=END
 #SBATCH --mail-user=tsori.kislev@gmail.com
@@ -10,6 +10,8 @@
 #SBATCH --exclude=sm-01,sm-16
 
 #SBATCH --output=slurms_outs/msa/%j.out
+
+export XLA_FLAGS="--xla_disable_hlo_passes=custom-kernel-fusion-rewriter"
 
 # Documentation:
 # This script runs the MSA (Multiple Sequence Alignment) process for a given input JSON file.
