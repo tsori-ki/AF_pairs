@@ -51,6 +51,7 @@
     &quot;Python.txt_to_msa2.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/cs/labs/dina/noabirman/synapseChainCut&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,7 +75,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (af3_example)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -120,6 +120,7 @@
       <workItem from="1743430550588" duration="98000" />
       <workItem from="1744014355294" duration="4135000" />
       <workItem from="1744018604468" duration="4092000" />
+      <workItem from="1745231318663" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="cuts">
       <option name="closed" value="true" />
