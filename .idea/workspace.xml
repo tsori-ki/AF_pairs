@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e0e5b38-254a-444c-bc04-54a37f16c13b" name="Changes" comment="readme" />
+    <list default="true" id="3e0e5b38-254a-444c-bc04-54a37f16c13b" name="Changes" comment="cif pdb">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +21,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -30,7 +31,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/tsori-ki/AF_pairs.git&quot;,
-    &quot;accountId&quot;: &quot;38277771-ac33-4065-89ba-b43019ad94e9&quot;
+    &quot;accountId&quot;: &quot;f72ab3c0-f3db-4b87-b929-6930631decd7&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -47,10 +48,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.cif_to_pdb.executor&quot;: &quot;Run&quot;,
     &quot;Python.cut_chains.executor&quot;: &quot;Run&quot;,
-    &quot;Python.txt_to_msa2.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tsori/Documents/project/AF_pairs&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -60,13 +63,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="txt_to_msa2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cif_to_pdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AF_pairs" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,15 +73,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (af3_example)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/txt_to_msa2.py" />
-      <option name="PARAMETERS" value="synapse_all_seqs.txt msa_inputs/synapse.json" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cif_to_pdb.py" />
+      <option name="PARAMETERS" value="&quot;C:\Users\tsori\Documents\project\RedefineSubunit\data\7ARC_Ben_AF3__20250217\7ARC_partial&quot; &quot;C:\Users\tsori\Documents\project\RedefineSubunit\data\7ARC_Ben_AF3__20250217\7ARC_partial\pdbs&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -92,15 +89,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.txt_to_msa2" />
+        <item itemvalue="Python.cif_to_pdb" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.347" />
-        <option value="bundled-python-sdk-c2d6afa66fbe-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.347" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -117,9 +114,7 @@
       <workItem from="1741350854314" duration="60000" />
       <workItem from="1743424431989" duration="11000" />
       <workItem from="1743424463222" duration="60000" />
-      <workItem from="1743430550588" duration="98000" />
-      <workItem from="1744014355294" duration="4135000" />
-      <workItem from="1744018604468" duration="4092000" />
+      <workItem from="1745240302160" duration="694000" />
     </task>
     <task id="LOCAL-00001" summary="cuts">
       <option name="closed" value="true" />
@@ -145,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741276687532</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cut">
+      <option name="closed" value="true" />
+      <created>1744275359413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744275359413</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cif pdb">
+      <option name="closed" value="true" />
+      <created>1744278475339</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744278475339</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,14 +176,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cuts" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="cut" />
+    <MESSAGE value="cif pdb" />
+    <option name="LAST_COMMIT_MESSAGE" value="cif pdb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt_to_msa2.py</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -182,15 +195,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/txt_to_msa2.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
+          <line>42</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/txt_to_msa_py$txt_to_msa2.coverage" NAME="txt_to_msa2 Coverage Results" MODIFIED="1743414210985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AF_pairs$cut_chains.coverage" NAME="cut_chains Coverage Results" MODIFIED="1741186876228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/txt_to_msa_py$txt_to_msa2__2_.coverage" NAME="txt_to_msa2 (2) Coverage Results" MODIFIED="1743414194464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AF_pairs$txt_to_msa.coverage" NAME="txt_to_msa Coverage Results" MODIFIED="1744139018222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AF_pairs$cut_chains.coverage" NAME="cut_chains Coverage Results" MODIFIED="1744139037473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AF_pairs$cif_to_pdb.coverage" NAME="cif_to_pdb Coverage Results" MODIFIED="1744278273816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/txt_to_msa_py$txt_to_msa2.coverage" NAME="txt_to_msa2 Coverage Results" MODIFIED="1743414210985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

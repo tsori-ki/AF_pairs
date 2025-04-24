@@ -14,38 +14,59 @@
 export XLA_FLAGS="--xla_disable_hlo_passes=custom-kernel-fusion-rewriter"
 
 # Documentation:
-# This script runs the MSA (Multiple Sequence Alignment) process for a given input JSON file.
+# This script runs the MSA (Multiple Sequence Alignment) process for a given input directory.
 # Usage:
-#   ./msa.sh <INPUT_JSON_PATH> <OUTPUT_DIR>
+#   ./msa.sh <INPUT_DIR> [MAPPING_JSON] [SUBUNITS_INFO_JSON]
 # Arguments:
-#   <INPUT_JSON_PATH>: Path to the input JSON file.
-#   <OUTPUT_DIR>: Directory where the output will be saved.
+#   <INPUT_DIR>: Path to the input directory containing JSON files.
+#   [MAPPING_JSON]: (Optional) Path to the mapping JSON file. If not specified, assumes 'mapping.json' in the parent directory of INPUT_DIR.
+#   [SUBUNITS_INFO_JSON]: (Optional) Path to the subunits info JSON file. If not specified, assumes 'subunits_info.json' in the parent directory of INPUT_DIR.
+# Output:
+#   The MSA results will be saved in a directory named 'msa_output' in the same parent directory as the input directory.
+#   Pairwise MSA files will be generated using the msa_to_pairwise.py script.
 
 export PATH="/sci/labs/dina/bshor/projects/af_combdock/tools/conda_install/miniconda3/bin:$PATH"
 . "/sci/labs/dina/bshor/projects/af_combdock/tools/conda_install/miniconda3/etc/profile.d/conda.sh"
 conda activate /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3-conda
 
-# Check if the correct number of arguments is provided
-if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 <INPUT_JSON_PATH> <OUTPUT_DIR>"
+cd /cs/labs/dina/tsori/af3_example/
+
+# Check for required arguments
+if [ "$#" -lt 1 ]; then
+  echo "Usage: $0 <INPUT_DIR> [MAPPING_JSON] [SUBUNITS_INFO_JSON]"
   exit 1
 fi
 
-JSON_PATH=$1
-OUTPUT_DIR=$2
+INPUT_DIR="$1"
 
-# Validate input JSON file
-if [ ! -f "$JSON_PATH" ]; then
-  echo "Error: Input JSON file '$JSON_PATH' does not exist."
+# Validate input directory
+if [ ! -d "$INPUT_DIR" ]; then
+  echo "Error: Input directory '$INPUT_DIR' does not exist."
   exit 1
 fi
+
+# Determine parent directory and set default paths
+PARENT_DIR=$(dirname "$INPUT_DIR")
+MAPPING_JSON="${2:-$PARENT_DIR/chain_id_mapping.json}"
+SUBUNITS_INFO_JSON="${3:-$PARENT_DIR/subunits_info.json}"
+
+# Validate mapping JSON file
+if [ ! -f "$MAPPING_JSON" ]; then
+  echo "Error: Mapping JSON file '$MAPPING_JSON' does not exist."
+  exit 1
+fi
+
+# Validate subunits info JSON file
+if [ ! -f "$SUBUNITS_INFO_JSON" ]; then
+  echo "Error: Subunits info JSON file '$SUBUNITS_INFO_JSON' does not exist."
+  exit 1
+fi
+
+# Determine output directory
+OUTPUT_DIR="$PARENT_DIR/msa_output"
 
 # Ensure the output directory exists
 mkdir -p "$OUTPUT_DIR"
-
-echo "Run MSA with input JSON: $JSON_PATH"
-
-cd /cs/labs/dina/tsori/af3_example/
 
 python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/alphafold3/run_alphafold.py \
   --jackhmmer_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/jackhmmer \
@@ -55,7 +76,5 @@ python /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/a
   --hmmsearch_binary_path /cs/usr/bshor/sci/installations/af3_variations/deepmind/localalphafold3/hmmer/bin/hmmsearch \
   --norun_inference \
   --output_dir "$OUTPUT_DIR" \
-  --json_path "$JSON_PATH"
-
-OUTPUT_JSON_PATH="$OUTPUT_DIR/$(basename "$JSON_PATH" .json)_data.json"
-python msa_to_pairwise.py "$JSON_PATH" "$OUTPUT_JSON_PATH"
+  --input_dir "$INPUT_DIR"
+python msa_to_pairwise.py "$OUTPUT_DIR" "$MAPPING_JSON" "$SUBUNITS_INFO_JSON"
