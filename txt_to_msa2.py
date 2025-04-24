@@ -46,7 +46,7 @@ def convert_fasta_to_msa_json(input_file):
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print("Usage: script <input_file> <output_file>")
+        print("Usage: script <input_file> <output_file>") #todo: I think the input is all_seqs.txt from Dina's email
         sys.exit(1)
 
     input_file, output_file = sys.argv[1], sys.argv[2]
